@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registeration Student</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="bg-blob" aria-hidden="true"></div>
+    <div class="bg-blob2" aria-hidden="true"></div>
+    <div class="container">
+        <header class="header">
+            <div class="header-left">
+                <div class="logo" aria-hidden="true">
+                    <img src="" alt="logo brand" class="logo-image">
+                </div>
+                <div>
+                    <h1 class="title" data-i18n="title">Pendaftaran Siswa</h1>
+                    <p class="subtitle" data-i18n="subtitle">Daftar untuk mengakses layanan</p>
+                </div> 
+            </div>
+            <div class="header-right">
+                <div class="lang-switch" role="tablist" aria-label="Language selector">
+                    <button type="button" class="lang-btn active" data-lang="id" aria-pressed="true">ID</button>
+                    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Tampilkan pesan sukses jika ada -->
+
+        <form method="POST" action="pendaftaran.php">
+            <input type="hidden" name="lang" id="lang" value="id">
+            <div class="form-group">
+                <label for="nama" data-i18n="label_name">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" data-i18n-placeholder="ph_name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" data-i18n="label_email">Email</label>
+                <input type="email" id="email" name="email" placeholder="contoh@email.com" data-i18n-placeholder="ph_email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="kelas" data-i18n="label_kelas">Kelas</label>
+                <select id="kelas" name="kelas" required>
+                    <option value="" data-i18n="opt_select">-- Pilih Kelas --</option>
+                    <option value="X RPL 1">X RPL 1</option>
+                    <option value="X RPL 2">X RPL 2</option>
+                    <option value="XI RPL 1">XI RPL 1</option>
+                    <option value="XI RPL 2">XI RPL 2</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label data-i18n="label_jk">Jenis Kelamin</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="jenis_kelamin" value="Laki-laki" required>
+                        <span data-i18n="jk_l">Laki-laki</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="jenis_kelamin" value="Perempuan">
+                        <span data-i18n="jk_p">Perempuan</span>
+                    </label>
+                </div>
+            </div> 
+            
+            <button type="submit" class="primary" data-i18n="btn_submit">Daftar Sekarang</button>
+        </form>
+    </div>
+
+
+
+
+    <script src="lang.js"></script>
+</body>
+</html>
