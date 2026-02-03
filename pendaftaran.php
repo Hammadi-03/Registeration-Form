@@ -73,7 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <img src="assets/logo.png" alt="Boarding School" class="logo-image">
                 </div>
                 <div>
-                    <span class="brand-text">Boarding School</span>
                     <h1 class="title" data-i18n="title">Buat Akun</h1>
                     <p class="subtitle" data-i18n="subtitle">Daftar untuk mengakses layanan</p>
                 </div>
