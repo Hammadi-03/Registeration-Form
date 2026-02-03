@@ -4,6 +4,10 @@
       title: 'Pendaftaran Siswa',
       subtitle: 'Daftar untuk mengakses layanan',
       label_name:'Nama Lengkap',
+      label_password:'Password',
+      ph_password:'Buat password minimal 8 karakter',
+      label_confirm:'Konfirmasi Password',
+      ph_confirm:'Ulangi password',
       ph_name:'Masukkan nama lengkap',
       label_email:'Email',
       ph_email:'contoh@email.com',
@@ -18,6 +22,10 @@
       title: 'Student Registration',
       subtitle: 'Sign up to access services',
       label_name:'Full Name',
+      label_password:'Password',
+      ph_password:'Create a password (min 8 chars)',
+      label_confirm:'Confirm Password',
+      ph_confirm:'Repeat password',
       ph_name:'Enter full name',
       label_email:'Email',
       ph_email:'name@example.com',
@@ -100,33 +108,6 @@
     else {
       try { start = localStorage.getItem('siteLang') || detectAutoLang(); } catch(e){ start = detectAutoLang(); }
     }
-    // debug info
-    try{ console.debug('Language start:', start, 'nav:', navigator.languages || navigator.language, 'tz:', Intl.DateTimeFormat().resolvedOptions().timeZone); }catch(e){}
     setLang(start);
   });
 })();
-// Input focus and error state handling
-document.querySelectorAll('.input-field').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.closest('.input-group').classList.add('focused');
-                this.closest('.input-group').classList.remove('error');
-            });
-            
-            input.addEventListener('blur', function() {
-                this.closest('.input-group').classList.remove('focused');
-                
-                // Add error state if input is empty
-                if (this.value.trim() === '') {
-                    this.closest('.input-group').classList.add('error');
-                } else {
-                    this.closest('.input-group').classList.remove('error');
-                }
-            });
-            
-            // Check on input change
-            input.addEventListener('input', function() {
-                if (this.value.trim() !== '') {
-                    this.closest('.input-group').classList.remove('error');
-                }
-            });
-        });
