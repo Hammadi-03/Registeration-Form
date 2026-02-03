@@ -152,16 +152,19 @@ button:hover{
 /* Left check-dot inside the pill (SVG) */
 button::before{
   content:'';
-  display:inline-block;
+  position:absolute;
+  left:12px;
+  top:50%;
   width:28px;height:28px;
+  transform:translateY(-50%);
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='%233f4755'/><path d='M6 12.5l3.2 3.2L18 7' stroke='%23ffffff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-  background-repeat:no-repeat;background-size:contain;margin-left:-12px;margin-right:8px;flex:0 0 28px;
-  transform:translateX(0);
-  transition:transform .18s cubic-bezier(.2,.9,.25,1), filter .18s ease, background-image .18s ease;
+  background-repeat:no-repeat;background-size:contain;flex:0 0 28px;
+  transition:left .26s cubic-bezier(.2,.9,.25,1), background-image .18s ease, box-shadow .18s ease;
 }
 
+/* Move the dot all the way to the right inside the pill on hover/focus */
 button:hover::before, button:focus::before{
-  transform:translateX(8px);
+  left: calc(100% - 22px - 28px - 6px); /* 22px padding-right + 28px dot + 6px inset */
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='%232e7d32'/><path d='M6 12.5l3.2 3.2L18 7' stroke='%23ffffff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
 }
 
